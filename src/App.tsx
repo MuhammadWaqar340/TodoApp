@@ -4,6 +4,7 @@ import AddTodo from "./modules/todo/AddTodo";
 import { Todo } from "./modules/todo/models/TodoModel";
 import TodosList from "./modules/todo/TodosList";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
+import { Login } from "./modules/auth/Login";
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
@@ -46,18 +47,19 @@ const App: React.FC = () => {
   };
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <div className="APP">
-        <span className="heading">Taskify</span>
-        <AddTodo todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+    // <DragDropContext onDragEnd={onDragEnd}>
+    <div className="APP">
+      {/* <span className="heading">{process.env.REACT_APP_NAME}</span> */}
+      {/* <AddTodo todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
         <TodosList
           todos={todos}
           setTodos={setTodos}
           completedTodos={completedTodos}
           setCompletedTodos={setCompletedTodos}
-        />
-      </div>
-    </DragDropContext>
+        /> */}
+      <Login />
+    </div>
+    /* </DragDropContext> */
   );
 };
 
