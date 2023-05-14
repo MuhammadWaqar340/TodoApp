@@ -1,9 +1,17 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { LoginInitValues } from "./models/LoginModel";
+import {toast} from 'react-toastify'
 export const Login = () => {
   return (
     <>
+     <div>
+      <div className='card-header text-center border-0 pt-5'>
+        <h1 className='card-title'>
+          <span className='card-label fw-bolder fs-3 mb-1'>Sign In to {process.env.REACT_APP_NAME}</span>
+        </h1>
+      </div>
+      <div className='card-body py-10'>
       <Formik
         initialValues={LoginInitValues}
         validationSchema={Yup.object().shape({
@@ -17,40 +25,43 @@ export const Login = () => {
               "Password must contain upper and lowercase letters and at least one number"
             ),
         })}
-        onSubmit={() => {}}
+        onSubmit={() => { toast.success('Successfully Login')}}
       >
         <Form>
-          <h1 className="heading">Sign In to {process.env.REACT_APP_NAME}</h1>
-
-          <div className="todos_heading label">
-            <label htmlFor="email">Email</label>
-          </div>
-          <div>
+        <div className='row'>
+        <div className='form-group col'>
+            <label htmlFor="email" className="todos_heading required">Email</label>
             <Field
               name="email"
               placeholder="Email"
               className="input_box"
               type="email"
             />
-          </div>
-
-          <div className="text-danger">
+          <div className="warning-text">
             <ErrorMessage name="email" />
           </div>
-
-          <div className="todos_heading label">
-            <label htmlFor="password">Password</label>
           </div>
-
+          </div>
+          <div className='row'>
+          <div className='form-group col'>
+            <label htmlFor="password" className="todos_heading required">Password</label>
           <Field
             name="password"
             placeholder="Password"
             className="input_box"
             type="password"
           />
-          <div className="text-danger">
+          <div className="warning-text">
             <ErrorMessage name="password" />
           </div>
+          </div>
+          </div>
+          <div className='d-flex justify-content-center'>
+          <button type="submit" className="submitButton">
+            Login
+          </button>
+          </div>
+           
 
           {/* <div className='d-flex justify-content-end mt-10'>
               <Link
@@ -81,11 +92,11 @@ export const Login = () => {
               </button>
             </div> */}
 
-          <button type="submit" className="submitButton">
-            Login
-          </button>
+        
         </Form>
       </Formik>
+      </div>
+      </div>
     </>
   );
 };

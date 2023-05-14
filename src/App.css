@@ -154,7 +154,7 @@
 .drag {
   box-shadow: 0 0 20px black;
 }
-.text-danger {
+.warning-text {
   color: #f58a7b;
   font-size: 18px;
   margin: 12px;
@@ -168,7 +168,7 @@
 
 .submitButton {
   /* position: fixed; */
-  width: 50px;
+  width: 120px;
   height: 50px;
   margin: 12px;
   border-radius: 50px;
@@ -189,6 +189,7 @@
   transform: scale(0.8);
   box-shadow: 0 0 5px black;
 }
-.label {
-  margin: 12px;
-}
+.required:after {
+    content:" *";
+    color:#f58a7b
+  }
