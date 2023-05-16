@@ -5,8 +5,8 @@ import { Todo } from "./modules/todo/models/TodoModel";
 import TodosList from "./modules/todo/TodosList";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { Login } from "./modules/auth/Login";
-import {ToastContainer} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
@@ -51,7 +51,7 @@ const App: React.FC = () => {
   return (
     // <DragDropContext onDragEnd={onDragEnd}>
     <div className="APP">
-       <ToastContainer />
+      <ToastContainer />
       {/* <span className="heading">{process.env.REACT_APP_NAME}</span> */}
       {/* <AddTodo todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
         <TodosList
