@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { LoginInitValues } from "./models/LoginModel";
+import { LoginInitValues } from "../models/LoginModel";
 import { toast } from "react-toastify";
 export const Login = () => {
   return (

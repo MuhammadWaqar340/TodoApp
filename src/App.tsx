@@ -4,7 +4,7 @@ import AddTodo from "./modules/todo/AddTodo";
 import { Todo } from "./modules/todo/models/TodoModel";
 import TodosList from "./modules/todo/TodosList";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
-import { Login } from "./modules/auth/Login";
+import { Login } from "./modules/auth/components/Login";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
